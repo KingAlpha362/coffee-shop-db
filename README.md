@@ -1,110 +1,34 @@
-# ☕ Coffee Shop Database (MySQL)
+![Coffee Shop Database — project cover](https://raw.githubusercontent.com/KingAlpha362/KingAlpha362/main/assets/covers/data.png)
 
-## 📌 Overview
+# Coffee Shop Database
 
-This project is a beginner-to-intermediate MySQL database designed to simulate a real-world coffee shop system.
+A MySQL learning project modelling drinks, customers, and orders with relational tables and JOIN queries.
 
-It demonstrates how to structure relational databases using tables, primary keys, foreign keys, and JOIN queries.
+## ✨ Highlights
 
----
+- Primary and foreign keys connect customer purchases to drinks.
+- Sample inserts and SELECT queries demonstrate basic SQL.
+- Includes an ER diagram and a MySQL Workbench model.
 
-## 🧱 Database Structure
+## 🚀 Getting started
 
-The database consists of three main tables:
+1. Open MySQL Workbench and connect to a local practice instance.
+2. Run [coffee-env.sql](coffee-env.sql) to create and select `coffee_shop`.
+3. Open [coffee_shop-mysql.sql](coffee_shop-mysql.sql). Before executing its final JOIN, change `drinks.drink_idcustomers` to `drinks.drink_id`.
+4. Execute the statements in order and inspect the result sets.
 
-### 1. Drinks
+Use a fresh practice database: the sample inserts are not designed for repeated execution.
 
-Stores available beverages.
+## 🗂️ Repository guide
 
-* drink_id (Primary Key)
-* name
-* price
-* size
+- [coffee-env.sql](coffee-env.sql)
+- [coffee_shop-erd.mwb](coffee_shop-erd.mwb)
+- [coffee_shop-mysql.sql](coffee_shop-mysql.sql)
 
-### 2. Customers
+## 📝 Project notes
 
-Stores customer information.
-
-* customer_id (Primary Key)
-* name
-* email
-
-### 3. Orders
-
-Stores purchase records and links customers to drinks.
-
-* order_id (Primary Key)
-* customer_id (Foreign Key)
-* drink_id (Foreign Key)
-* quantity
-* order_date
+The final JOIN currently contains the typo noted above. The schema is a learning example; further validation and order-total handling would be useful extensions.
 
 ---
 
-## 🔗 Relationships
-
-* A customer can have many orders
-* A drink can appear in many orders
-* Orders act as a bridge between customers and drinks
-
----
-
-## 💻 Example Query (JOIN)
-
-```sql
-SELECT 
-    customers.name AS customer_name,
-    drinks.name AS drink_name,
-    orders.quantity,
-    orders.order_date
-FROM orders
-JOIN customers 
-    ON orders.customer_id = customers.customer_id
-JOIN drinks 
-    ON orders.drink_id = drinks.drink_id;
-```
-
----
-
-## 🚀 Features Demonstrated
-
-* Database creation
-* Table relationships (Foreign Keys)
-* Data insertion
-* Data retrieval using SELECT
-* JOIN operations (multi-table queries)
-* Basic data modeling
-
----
-
-## 📊 Future Improvements
-
-* Add categories (hot/cold drinks)
-* Add staff table
-* Implement order totals and receipts
-* Add constraints to prevent duplicate data
-* Build a front-end app to interact with the database
-
----
-
-## 🧠 What I Learned
-
-* How relational databases work
-* How to design tables with relationships
-* How to write SQL queries for real-world scenarios
-* How to use MySQL Workbench
-* How to use GitHub for version control
-
----
-
-## ⚙️ How to Run
-
-1. Open MySQL Workbench
-2. Run the `coffee_shop-mysql` file
-3. Insert sample data
-4. Execute queries to explore the database
-
----
-
-## 📌 Author
-ALPHA
+[← Portfolio](https://github.com/KingAlpha362/KingAlpha362) · [Browse all projects](https://github.com/KingAlpha362/KingAlpha362/blob/main/PORTFOLIO.md)
